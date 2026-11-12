@@ -5,7 +5,7 @@ const Navbar = () => {
     <nav class="navbar navbar-expand-lg bg-primary mb-2 sticky-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="/">
-    <img src="public/images/30cacbc1-6dfb-4af0-a9be-b7e9c82881c7.png" alt="" width={100}/>
+    <img src="/images/30cacbc1-6dfb-4af0-a9be-b7e9c82881c7.png" alt="" width={100}/>
     Swahili dishes</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>

@@ -22,13 +22,13 @@ At [Hotel Name], your comfort and satisfaction are our top priorities.</p>
             <div className="col-md-4">
                 <h2>Stay connected</h2>
                 <a href="https://facebook.com" className='m-2'>
-                    <img src="public/images/images.png" width={100} alt="" />
+                    <img src="/images/images.png" width={100} alt="" />
                 </a>
                 <a href="https://instagram.com" className='m-2'>
-                    <img src="public/images/images (32).jpeg" width={100} alt="" />
+                    <img src="/images/images (32).jpeg" width={100} alt="" />
                 </a>
                 <a href="https://x.com">
-                    <img src="public/images/images (1).png" width={100} alt="" />
+                    <img src="/images/images (1).png" width={100} alt="" />
                 </a>
             </div>
     

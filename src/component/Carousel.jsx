@@ -5,21 +5,21 @@ const Carousel = () => {
     <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="public/images/Snacks to Savor.png" class="d-block w-100" alt="..." />
+          <img src="/images/Snacks to Savor.png" class="d-block w-100" alt="..." />
         </div>
         <div class="carousel-item">
-          <img src="public/images/Sweet Treats.png" class="d-block w-100" alt="..." />
+          <img src="/images/Sweet Treats.png" class="d-block w-100" alt="..." />
         </div>
         <div class="carousel-item">
-          <img src="public/images/Freshness Delivered.png" class="d-block w-100" alt="..." />
+          <img src="/images/Freshness Delivered.png" class="d-block w-100" alt="..." />
         </div>
         <div class="carousel-item">
-          <img src="public/images/Fresh Picks.png" class="d-block w-100" alt="..." />
+          <img src="/images/Fresh Picks.png" class="d-block w-100" alt="..." />
         </div><div class="carousel-item">
-          <img src="public/images/Everyday Goodness.png" class="d-block w-100" alt="..." />
+          <img src="/images/Everyday Goodness.png" class="d-block w-100" alt="..." />
         </div>
         <div class="carousel-item">
-          <img src="public/images/A Rainbow of Fruit.png" class="d-block w-100" alt="..." />
+          <img src="/images/A Rainbow of Fruit.png" class="d-block w-100" alt="..." />
         </div>
 
 
