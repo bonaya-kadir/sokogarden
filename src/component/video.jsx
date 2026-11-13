@@ -12,7 +12,7 @@ const video = () => {
                     style={{height:"220px",objectFit:"cover"}}
                     controls
                     >
-                        <source src='public/videos/fruits.mp4' type='video/mp4' />
+                        <source src='/videos/fruits.mp4' type='video/mp4' />
                 </video>
                 <h4 text-warning text-center>Fruits salad</h4>
                 <p>Fruit salad is a delicious and healthy mixture of fresh fruits such as mangoes, bananas, pineapples, watermelons, apples, grapes, and pawpaw. The fruits are washed, peeled, chopped into small pieces, and mixed together. It is served fresh and chilled as a refreshing dessert, rich in vitamins and nutrients.</p>
@@ -24,7 +24,7 @@ const video = () => {
                     style={{height:"220px",objectFit:"cover"}}
                     controls
                     >
-                        <source src='public/videos/video.mp4' type='video/mp4' />
+                        <source src='/videos/video.mp4' type='video/mp4' />
                 </video>
                 <h4 text-warning text-center>Fruits mix</h4>
                 <p>Fruit salad is a delicious and healthy mixture of fresh fruits such as mangoes, bananas, pineapples, watermelons, apples, grapes, and pawpaw. The fruits are washed, peeled, chopped into small pieces, and mixed together. It is served fresh and chilled as a refreshing dessert, rich in vitamins and nutrients.</p>
