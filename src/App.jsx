@@ -6,6 +6,7 @@ import Signin from './component/Signin';
 import Getproduct from './component/Getproducts';
 import Addproducts from './component/Addproduct';
 import Mpesapayment from './component/Mpesapayment';
+import Video from './component/video';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Footer from './component/Footer';
 import Navbar from './component/Navbar';
@@ -21,6 +22,7 @@ const App =()=>{
       <Route path="/signup" element={<Signup />} />
       <Route path="/addproducts" element={<Addproducts />} />
       <Route path="/Mpesapayment" element={<Mpesapayment />} />
+      <Route path="/Video" element={<Video/>}/>
 
 
     </Routes>

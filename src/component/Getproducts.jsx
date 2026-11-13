@@ -8,6 +8,10 @@ const Getproducts = () => {
   const [loading,setLoading]=useState("")
   const[products,setProducts]=useState([])
   const[error,setError]=useState("")
+  const[search,setSearch]=useState("")
+
+  // category button currently selected 
+  const [selectedCategory,setSelectedCategory]=useState("All")
 
   let navigate =useNavigate()
 
@@ -29,14 +33,56 @@ const Getproducts = () => {
 
   },[])
   console.log(products)
+  // unique list of categories 
+  const categories=[...new Set(products.map((item)=>item.product_category))]
+
+  const filteredproducts=products.filter((item) =>
+
+    item.product_name.toLowerCase().includes(search.toLowerCase())&&
+  selectedCategory==="All" || item.product_category===selectedCategory)
   const imagepath ="https://abdulmodcom.alwaysdata.net/static/images/"
   return (
     <div className=''>
       {/* carousel goes here  */}
       <Carousel />
       <section className='row'>
-        <h1 className='text-center text-success'>Available products</h1>   
-        {products.map(singleproduct=>(
+        <h1 className='text-center text-success'>Available products</h1> 
+
+        {/* search box    */}
+        <div className='row justify-content-center mb-3'>
+          <div className='col-md-6'>
+            <input 
+            type="text" 
+            className='form-control' 
+            placeholder='Search products...' 
+            value={search} 
+            onChange={(e)=>setSearch(e.target.value)} />
+
+          </div>
+          {/* category button  */}
+          <div className='row justify-content-center mb-3'>
+            <div className='col-md-6 text-center'>
+              <button 
+              className={selectedCategory==="All" ? "btn btn-info m-1": "btn btn-outline-info m-1"}
+              onClick={()=>setSelectedCategory("All")}
+              >
+                All
+                </button>
+                  {categories.map((cat)=>(
+                <button
+                  key={cat}
+                  className={selectedCategory==="All" ? "btn btn-info m-1": "btn btn-outline-info m-1"}
+                  onClick={()=>setSelectedCategory(cat)}
+                  >
+                  {cat}
+                </button>))}
+
+            </div>
+
+          </div>
+
+        </div>
+        {filteredproducts.map(singleproduct=>(
           <div className='col-md-3 mb-2'>
             <div className="card shadow h-100">
               <img src= {imagepath+singleproduct.product_photo}alt=""  height={180}/>
@@ -53,6 +99,10 @@ const Getproducts = () => {
 
           </div>
         ))}
+
+        {filteredproducts.length=== 0 &&(
+          <p className='text-center text-danger'>No products found</p>
+        )}
 
       </section>
 
