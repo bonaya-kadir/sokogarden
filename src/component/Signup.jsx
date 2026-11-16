@@ -7,14 +7,18 @@ const Signup =()=>{
     const [email,setEmail]=useState("mike@gmail.com")
     const[password,setPassword]=useState("akb123")
     const[phone,setPhone]=useState("0712345678")
+
     // declare 3 states for posting data 
     const [loading,setLoading]=useState("")
     const[success,setSuccess]=useState("")
     const[error,setError]=useState("")
+    const[strenght,setStrenght]=useState("")
+
     // function to post data 
     const handlesubmit=async(e)=>{
        e.preventDefault()
        setLoading("please wait...")
+
     //    create empty digital envelope 
     const formdata=new FormData()
     formdata.append("username",username)
@@ -34,6 +38,16 @@ const Signup =()=>{
 
 
     }
+    const checkPasswordStrength=(password)=>{
+        if (password.length<4){
+            setStrenght ("Weak");
+        }else if(password.length<8){
+            setStrenght("Medium");
+        }else{
+            setStrenght("Strong");
+        }
+        
+    };
     return(
         <div className="justify-content-center row">
             <div className="col-md-6 p-4 card shadow text-center">
@@ -49,7 +63,25 @@ const Signup =()=>{
                 {/* email goes here */}
                 <input type="email" required className="form-control" placeholder=" ✉️Enter email" onChange={(e)=>setEmail(e.target.value)}/><br />
                 {/* password goes here */}
-                <input type="password" required className="form-control" placeholder=" 🔐Enter password" onChange={(e)=>setPassword(e.target.value)}/><br />
+                <input type="password" required className="form-control" placeholder=" 🔐Enter password" onChange={(e)=>{
+                    setPassword(e.target.value);
+                    checkPasswordStrength(e.target.value)
+                }}/>
+                {password &&(
+                    <p
+                    style={{
+                        color:
+                        strenght==="Weak"
+                        ?"red"
+                        :strenght==="Medium"
+                        ?"orange"
+                        :"green"
+                    }}
+                    >
+                        PassWord Strenght:{strenght} 
+                    </p>
+                )
+                }
                 {/* phone goes here */}
                 <input type="tel" required className="form-control" placeholder=" 📱Enter phone" onChange={(e)=>setPhone(e.target.value)}/><br />
                 <button type="submit" className="btn btn-primary w-100">Signup🧑🏽</button>

@@ -12,6 +12,8 @@ const Getproducts = () => {
 
   // category button currently selected 
   const [selectedCategory,setSelectedCategory]=useState("All")
+  // products visible right now 
+  const [visibleCount, setVisibleCount]=useState(8)
 
   let navigate =useNavigate()
 
@@ -40,6 +42,9 @@ const Getproducts = () => {
 
     item.product_name.toLowerCase().includes(search.toLowerCase())&&
   selectedCategory==="All" || item.product_category===selectedCategory)
+
+  // first visibleCount of the products of the filtered list 
+  const visibleProducts = filteredproducts.slice(0, visibleCount)
   const imagepath ="https://abdulmodcom.alwaysdata.net/static/images/"
   return (
     <div className=''>
@@ -82,7 +87,7 @@ const Getproducts = () => {
           </div>
 
         </div>
-        {filteredproducts.map(singleproduct=>(
+        {visibleProducts.map(singleproduct=>(
           <div className='col-md-3 mb-2'>
             <div className="card shadow h-100">
               <img src= {imagepath+singleproduct.product_photo}alt=""  height={180}/>
@@ -99,6 +104,17 @@ const Getproducts = () => {
 
           </div>
         ))}
+        {/* load more buttons  */}
+        {visibleCount<filteredproducts.length &&(
+        <div className='text-center mb-4'>
+          <button className='btn btn-info px-5'
+          onClick={()=>setVisibleCount(visibleCount+8)}
+          >
+            Load More 
+            
+          </button>
+        </div>
+        )}
 
         {filteredproducts.length=== 0 &&(
           <p className='text-center text-danger'>No products found</p>
