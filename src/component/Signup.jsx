@@ -67,7 +67,7 @@ const Signup =()=>{
                     setPassword(e.target.value);
                     checkPasswordStrength(e.target.value)
                 }}/>
-                {password &&(
+                {password.length > 0 &&(
                     <p
                     style={{
                         color:
